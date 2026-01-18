@@ -1,0 +1,30 @@
+Project: SwiftUI Weather App
+
+Tech Stack:
+- SwiftUI
+- async/await
+- Observation framework (@Observable)
+- Supabase (auth + database)
+- OpenWeatherMap API
+
+Rules:
+- ViewModel is the single source of truth
+- Views must not contain business logic
+- State mutations must happen on the main actor
+- Use Environment(ViewModel.self) for injection
+- Do not duplicate shared state in views
+- Fix logic bugs before refactoring
+- Explain root cause before suggesting code
+
+API Rules:
+- OpenWeatherMap units:
+  - metric = Celsius
+  - imperial = Fahrenheit
+- Do not invent API parameters
+
+Debugging Rules:
+- Trace execution flow step-by-step
+- Check guard conditions
+- Verify async calls are triggered
+- Verify state is actually mutated
+- Do not guess
