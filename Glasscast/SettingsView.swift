@@ -12,12 +12,13 @@ struct SettingsView: View {
             .padding()
             .onChange(of: isCelsius) { _, newValue in
                 viewModel.system = newValue ? .metric : .imperial
+                
 
-                if !viewModel.city.isEmpty {
+               
                     Task {
-                        try? await viewModel.getCityWeather(city: viewModel.city)
+                        await viewModel.changeWeatherObject()
                     }
-                }
+                
             }
             .onAppear {
                 isCelsius = (viewModel.system == .metric)

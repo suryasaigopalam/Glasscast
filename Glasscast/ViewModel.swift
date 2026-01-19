@@ -150,6 +150,18 @@ extension ViewModel {
     }
     
     
+    func changeWeatherObject() async  {
+        if weatherObject != nil {
+            do {
+                try await getCityWeather(city: weatherObject?.city.name ?? "Cupertino" )
+            }catch {
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+    
+    
 }
 
 
